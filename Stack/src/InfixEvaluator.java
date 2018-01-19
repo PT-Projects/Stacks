@@ -1,5 +1,3 @@
-import javafx.geometry.Pos;
-
 import java.util.Stack;
 
 public class InfixEvaluator {
@@ -26,16 +24,17 @@ public class InfixEvaluator {
                     String var1 = s;
                     String var2 = operatorStack.peek();
 
-                    int newOper = getValue(s);
+                    int newOper = getValue(var1);
                     int topStack = getValue(var2);
 
-                    if (newOper > topStack) {
+                    if (newOper > topStack || topStack == 5) {
                         operatorStack.push(var1);
                     } else if (newOper <= topStack) {
-                        if (!operatorStack.peek().equals("(") && !operatorStack.peek().equals(")")){
-                            PostFix.append(operatorStack.pop() + " ");
+                        PostFix.append(operatorStack.pop() + " ");
+                        if (newOper == -1){
+                            operatorStack.pop();
                         }
-                        if (newOper != -1 && newOper != 5) {
+                        else {
                             operatorStack.push(var1);
                         }
                     }
