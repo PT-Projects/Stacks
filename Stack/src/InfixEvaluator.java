@@ -42,8 +42,10 @@ public class InfixEvaluator {
             }
         }
 
-        for (int x = 0; x <= operatorStack.size(); x++){
-            PostFix.append(operatorStack.pop() + " ");
+        if (!operatorStack.empty()) {
+            for (int x = 0; x <= operatorStack.size(); x++) {
+                PostFix.append(operatorStack.pop() + " ");
+            }
         }
 
         return PostFix.toString();
