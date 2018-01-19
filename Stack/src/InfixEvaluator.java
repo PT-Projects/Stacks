@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class InfixEvaluator {
 
-    public static String getAnswer(String Infix){
+    public static String createPostfix(String Infix){
 
         Stack<String> operatorStack = new Stack<>();
 
@@ -48,6 +48,11 @@ public class InfixEvaluator {
 
         return PostFix.toString();
 
+    }
+
+    public static double getAnswer(String str){
+        String postfix = createPostfix(str);
+        return PostfixEvaluator.calculateAnswer(postfix);
     }
 
     private static int getValue(String str){

@@ -9,11 +9,7 @@ public class Driver {
 
             String text = in.nextLine();
 
-            String var = InfixEvaluator.getAnswer(text);
-
             System.out.println(InfixEvaluator.getAnswer(text));
-
-            System.out.println(PostfixEvaluator.calculateAnswer(var));
 
         }
 
