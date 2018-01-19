@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class InfixEvaluator {
 
-    public static String createPostfix(String Infix){
+    public static String getAnswer(String Infix){
 
         Stack<String> operatorStack = new Stack<>();
 
